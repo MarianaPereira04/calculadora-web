@@ -14,7 +14,10 @@ export default function Calculator() {
             setDisplay(value);
             setWaitingForSecond(false);
         } else {
-            setDisplay(display === "0" ? value : display + value);
+            setDisplay(prev =>
+                prev === "0" ? value : prev + value
+            );
+
         }
     };
 
